@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-2.2.4.js"></script>
+    <meta charset="utf-8">
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <!-- Ajout des propriétés de mon rectangle -->
+    <style>
+      #rect {
+        background-color: black;
+        width: 500px;
+        height: 10px;
+      }
+    </style>
+    <!-- Ajout d'une div rectangle et de cinq boutons avec leur ID -->
+    <div id="rect"></div>
+    <button type="button" name="button" id="increase">Increase</button>
+    <button type="button" name="button" id="green">Green</button>
+    <button type="button" name="button" id="default">Default</button>
+    <button type="button" name="button" id="hide">Hide</button>
+    <button type="button" name="button" id="show">Show</button>
+    <script>
+    // Déclaration d'une variable du rect pour eviter la répétition
+    var rect = $('#rect');
+    // Ajout d'un click à increase pour augmenter de 10 px rect jusqu'à 100px, après il retourne à 10px
+      $('#increase').click(function() {
+        if (rect.height() < 100) {
+          rect.css('height', '+=10px') ;
+        }
+        else {
+          rect.height('10px');
+        }
+      });
+    // Ajout d'un click à green qui change la couleur de rect
+      $('#green').click(function() {
+        rect.css('background-color', 'green');
+      });
+    // Ajout d'un click à default qui remet la couleur initiale de rect
+      $('#default').click(function() {
+        rect.css('background-color', 'black');
+      });
+    // Ajout d'un click à hide qui cache rect
+      $('#hide').click(function() {
+        rect.hide();
+      });
+    // Ajout d'un click à show qui montre rect
+      $('#show').click(function() {
+        rect.show();
+      });
+    </script>
+  </body>
+</html>
